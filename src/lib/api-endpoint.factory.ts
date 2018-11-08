@@ -1,22 +1,21 @@
-import { ApiEndpoint } from './api-endpoint.class';
-import { EndpointParams } from './endpoint-params.interface';
-import { InterpolatableApiEndpoint } from './interpolatable-api-endpoint.class';
+import { ApiEndpoint } from './api-endpoint';
+import { InterpolatableApiEndpoint } from './interpolatable-api-endpoint';
 
 export function apiEndpointFactory(
   apiUrl: string,
   interpolatable?: false
 ): ApiEndpoint;
 
-export function apiEndpointFactory<PARAMS extends EndpointParams>(
+export function apiEndpointFactory<T extends string>(
   apiUrl: string,
   interpolatable: true
-): InterpolatableApiEndpoint<PARAMS>;
+): InterpolatableApiEndpoint<T>;
 
-export function apiEndpointFactory<PARAMS extends EndpointParams>(
+export function apiEndpointFactory<T extends string>(
   apiUrl: string,
   interpolatable = false
-): InterpolatableApiEndpoint<PARAMS> | ApiEndpoint {
+): InterpolatableApiEndpoint<T> | ApiEndpoint {
   return interpolatable
-    ? new InterpolatableApiEndpoint<PARAMS>(apiUrl)
+    ? new InterpolatableApiEndpoint<T>(apiUrl)
     : new ApiEndpoint(apiUrl);
 }

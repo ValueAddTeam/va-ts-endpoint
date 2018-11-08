@@ -1,7 +1,7 @@
 export class ApiEndpoint {
   constructor(private apiUrl: string) {}
 
-  public getUrl(): string {
+  public url(): string {
     return this.apiUrl;
   }
 }

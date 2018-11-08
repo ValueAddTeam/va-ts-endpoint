@@ -5,7 +5,7 @@
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
-  "repository": "https://github.com/patryk-zielinski93/va-ts-endpoint",
+  "repository": "https://github.com/ValueAddTeam/va-ts-endpoint",
   "license": "MIT",
   "keywords": [],
   "scripts": {
