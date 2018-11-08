@@ -75,12 +75,6 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface"><a href="interfaces/endpointparams.html" class="tsd-kind-icon">Endpoint<wbr>Params</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#apiendpointfactory" class="tsd-kind-icon">api<wbr>Endpoint<wbr>Factory</a></li>
@@ -97,13 +91,13 @@
 					<h3>api<wbr>Endpoint<wbr>Factory</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
 						<li class="tsd-signature tsd-kind-icon">api<wbr>Endpoint<wbr>Factory<span class="tsd-signature-symbol">(</span>apiUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, interpolatable<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="classes/apiendpoint.html" class="tsd-signature-type">ApiEndpoint</a></li>
-						<li class="tsd-signature tsd-kind-icon">api<wbr>Endpoint<wbr>Factory&lt;PARAMS&gt;<span class="tsd-signature-symbol">(</span>apiUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, interpolatable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="classes/interpolatableapiendpoint.html" class="tsd-signature-type">InterpolatableApiEndpoint</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PARAMS</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">api<wbr>Endpoint<wbr>Factory&lt;T&gt;<span class="tsd-signature-symbol">(</span>apiUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, interpolatable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="classes/interpolatableapiendpoint.html" class="tsd-signature-type">InterpolatableApiEndpoint</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ValueAddTeam/va-ts-endpoint/blob/0e1b955/src/lib/api-endpoint.factory.ts#L5">lib/api-endpoint.factory.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/ValueAddTeam/va-ts-endpoint/blob/f91e52c/src/lib/api-endpoint.factory.ts#L4">lib/api-endpoint.factory.ts:4</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -120,13 +114,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ValueAddTeam/va-ts-endpoint/blob/0e1b955/src/lib/api-endpoint.factory.ts#L10">lib/api-endpoint.factory.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/ValueAddTeam/va-ts-endpoint/blob/f91e52c/src/lib/api-endpoint.factory.ts#L9">lib/api-endpoint.factory.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>PARAMS<span class="tsd-signature-symbol">: </span><a href="interfaces/endpointparams.html" class="tsd-signature-type">EndpointParams</a></h4>
+									<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -138,7 +132,7 @@
 									<h5>interpolatable: <span class="tsd-signature-type">true</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="classes/interpolatableapiendpoint.html" class="tsd-signature-type">InterpolatableApiEndpoint</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PARAMS</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="classes/interpolatableapiendpoint.html" class="tsd-signature-type">InterpolatableApiEndpoint</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -152,7 +146,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ValueAddTeam/va-ts-endpoint/blob/0e1b955/src/lib/interpolate.ts#L6">lib/interpolate.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/ValueAddTeam/va-ts-endpoint/blob/f91e52c/src/lib/interpolate.ts#L6">lib/interpolate.ts:6</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -190,9 +184,6 @@
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/interpolatableapiendpoint.html" class="tsd-kind-icon">Interpolatable<wbr>Api<wbr>Endpoint</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/endpointparams.html" class="tsd-kind-icon">Endpoint<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#apiendpointfactory" class="tsd-kind-icon">api<wbr>Endpoint<wbr>Factory</a>

@@ -64,8 +64,33 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="va-ts-endpoint">va-ts-endpoint</h1>
-				<p>Simple Endpoint with interpolatable path parameters factory</p>
+				<h1 id="api-endpoint">Api Endpoint</h1>
+				<h3 id="installation">Installation</h3>
+				<p><code>npm install va-ts-endpoint</code>  </p>
+				<h3 id="motivation">Motivation</h3>
+				<p>Writing data services with hard-coded endpoints that have parameters in the url string is not very comfortable, because whenever I want to interpolate them, I have to jump to the variable declaration that stores the string with the address. That&#39;s why I decided to create a very simple factory which helps to create typed endpoints.  </p>
+				<h3 id="usage">Usage</h3>
+				<pre><code class="language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ExampleDataService {
+  readonly endpoints = {
+    <span class="hljs-comment">// Create simple endpoint.</span>
+    <span class="hljs-comment">// In simple case ApiEndpoint is additional abstraction, but it's created to be consistent in every place.</span>
+    getItems: apiEndpointFactory(<span class="hljs-string">`<span class="hljs-subst">${yourApiBaseUrl}</span>/items`</span>),
+    <span class="hljs-comment">// Create typed endpoint. Values with `:` will be interpolated.</span>
+    <span class="hljs-comment">// Provide union type which corresponds to values which should be interpolated. </span>
+    getItem: apiEndpointFactory&lt;<span class="hljs-string">'exampleId'</span> | <span class="hljs-string">'itemId'</span>&gt;(<span class="hljs-string">`<span class="hljs-subst">${yourApiBaseUrl}</span>/examples/:exampleId/items/:itemId`</span>)
+  };
+
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> http: HttpClient</span>) {}
+
+  getItems(): Observable&lt;Item[]&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.http.get(<span class="hljs-keyword">this</span>.endpoints.getItems.getUrl());
+  }
+
+  getItem(exampleId: <span class="hljs-built_in">string</span>, itemId: <span class="hljs-built_in">string</span>): Observable&lt;Item&gt; {
+    url
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.http.get(<span class="hljs-keyword">this</span>.endpoints.getItem.getUrl({exampleId, itemId}));
+  }
+}</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -83,9 +108,6 @@
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/interpolatableapiendpoint.html" class="tsd-kind-icon">Interpolatable<wbr>Api<wbr>Endpoint</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/endpointparams.html" class="tsd-kind-icon">Endpoint<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#apiendpointfactory" class="tsd-kind-icon">api<wbr>Endpoint<wbr>Factory</a>
