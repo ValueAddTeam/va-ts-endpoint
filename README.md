@@ -18,18 +18,17 @@ export class ExampleDataService {
     getItems: apiEndpointFactory(`${yourApiBaseUrl}/items`),
     // Create typed endpoint. Values with `:` will be interpolated.
     // Provide union type which corresponds to values which should be interpolated. 
-    getItem: apiEndpointFactory<'exampleId' | 'itemId'>(`${yourApiBaseUrl}/examples/:exampleId/items/:itemId`)
+    getItem: apiEndpointFactory<'exampleId' | 'itemId'>(`${yourApiBaseUrl}/examples/:exampleId/items/:itemId`, true)
   };
   
   constructor(private http: HttpClient) {}
   
   getItems(): Observable<Item[]> {
-    return this.http.get(this.endpoints.getItems.getUrl());
+    return this.http.get(this.endpoints.getItems.url());
   }
   
   getItem(exampleId: string, itemId: string): Observable<Item> {
-    url
-    return this.http.get(this.endpoints.getItem.getUrl({exampleId, itemId}));
+    return this.http.get(this.endpoints.getItem.url({exampleId, itemId}));
   }
 }
 ```
