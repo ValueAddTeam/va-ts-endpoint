@@ -77,18 +77,17 @@
     getItems: apiEndpointFactory(<span class="hljs-string">`<span class="hljs-subst">${yourApiBaseUrl}</span>/items`</span>),
     <span class="hljs-comment">// Create typed endpoint. Values with `:` will be interpolated.</span>
     <span class="hljs-comment">// Provide union type which corresponds to values which should be interpolated. </span>
-    getItem: apiEndpointFactory&lt;<span class="hljs-string">'exampleId'</span> | <span class="hljs-string">'itemId'</span>&gt;(<span class="hljs-string">`<span class="hljs-subst">${yourApiBaseUrl}</span>/examples/:exampleId/items/:itemId`</span>)
+    getItem: apiEndpointFactory&lt;<span class="hljs-string">'exampleId'</span> | <span class="hljs-string">'itemId'</span>&gt;(<span class="hljs-string">`<span class="hljs-subst">${yourApiBaseUrl}</span>/examples/:exampleId/items/:itemId`</span>, <span class="hljs-literal">true</span>)
   };
 
   <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> http: HttpClient</span>) {}
 
   getItems(): Observable&lt;Item[]&gt; {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.http.get(<span class="hljs-keyword">this</span>.endpoints.getItems.getUrl());
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.http.get(<span class="hljs-keyword">this</span>.endpoints.getItems.url());
   }
 
   getItem(exampleId: <span class="hljs-built_in">string</span>, itemId: <span class="hljs-built_in">string</span>): Observable&lt;Item&gt; {
-    url
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.http.get(<span class="hljs-keyword">this</span>.endpoints.getItem.getUrl({exampleId, itemId}));
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.http.get(<span class="hljs-keyword">this</span>.endpoints.getItem.url({exampleId, itemId}));
   }
 }</code></pre>
 			</div>
